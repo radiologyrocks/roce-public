@@ -17,13 +17,13 @@ secrets** — only static HTML for public review.
 
 ## Once deployed via GitHub Pages
 
-The default URLs (assuming GitHub username `Brownster`) will be:
+Hosted under the `radiologyrocks` GitHub organization. The default URLs are:
 
 | Page              | URL                                                          |
 | ----------------- | ------------------------------------------------------------ |
-| Landing           | `https://brownster.github.io/roce-public/`                   |
-| Terms & Conditions| `https://brownster.github.io/roce-public/terms.html`         |
-| Privacy Policy    | `https://brownster.github.io/roce-public/privacy.html`       |
+| Landing           | `https://radiologyrocks.github.io/roce-public/`                   |
+| Terms & Conditions| `https://radiologyrocks.github.io/roce-public/terms.html`         |
+| Privacy Policy    | `https://radiologyrocks.github.io/roce-public/privacy.html`       |
 
 Paste the **Privacy** and **Terms** URLs into the corresponding fields on
 the Twilio A2P campaign-registration form.
@@ -42,7 +42,7 @@ git branch -M main
 gh repo create roce-public --public --source=. --remote=origin --push
 
 # Enable GitHub Pages from the main branch root
-gh api -X POST repos/Brownster/roce-public/pages \
+gh api -X POST repos/radiologyrocks/roce-public/pages \
   -f "source[branch]=main" \
   -f "source[path]=/"
 ```
@@ -52,7 +52,7 @@ If you do not have `gh` installed, do this in the GitHub web UI instead:
 1. Create a new public repo named `roce-public` at https://github.com/new
 2. Push this folder to it:
    ```bash
-   git remote add origin https://github.com/Brownster/roce-public.git
+   git remote add origin https://github.com/radiologyrocks/roce-public.git
    git push -u origin main
    ```
 3. In the repo on github.com, go to **Settings → Pages**, choose

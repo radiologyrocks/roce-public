@@ -3,20 +3,20 @@
 Use the values below directly in the Twilio campaign registration form.
 Character counts have been pre-checked against Twilio's stated limits.
 
-> Replace `Brownster` in the URLs with your actual GitHub username if different.
+> Live under the `radiologyrocks` GitHub org at `https://radiologyrocks.github.io/roce-public/`.
 
 ---
 
 ## Privacy Policy URL
 
 ```
-https://brownster.github.io/roce-public/privacy.html
+https://radiologyrocks.github.io/roce-public/privacy.html
 ```
 
 ## Terms and Conditions URL
 
 ```
-https://brownster.github.io/roce-public/terms.html
+https://radiologyrocks.github.io/roce-public/terms.html
 ```
 
 ---
@@ -46,7 +46,7 @@ through a practice web form or patient-portal page that includes a
 clearly-labeled opt-in checkbox describing the SMS scheduling program,
 expected message types, message frequency, message-and-data-rates
 disclosure, and links to the program's Terms and Conditions and Privacy
-Policy at https://brownster.github.io/roce-public/.
+Policy at https://radiologyrocks.github.io/roce-public/.
 
 4) Reply-keyword opt-in: The patient texts an opt-in keyword (such as
 START, SCHEDULE, BEGIN, or YES) to the program number, after which an
@@ -85,7 +85,7 @@ within the 320 limit.)
 ROCE Radiology Scheduling: You're enrolled. We'll text you a secure link
 to schedule your imaging exam and reminders before your appointment.
 Msg & data rates may apply. Up to 6 msgs per order. Reply HELP for help,
-STOP to cancel. Terms: brownster.github.io/roce-public/terms.html
+STOP to cancel. Terms: radiologyrocks.github.io/roce-public/terms.html
 ```
 
 ---
@@ -123,7 +123,7 @@ INFO
 ```
 ROCE Radiology Scheduling: We send scheduling links and reminders for your
 imaging exam. Msg & data rates may apply. Reply STOP to cancel. Support:
-elliottbrown@gmail.com.  Terms: brownster.github.io/roce-public/terms.html
+elliottbrown@gmail.com.  Terms: radiologyrocks.github.io/roce-public/terms.html
 ```
 
 **Sample messages** (Twilio asks you to paste 1–2 representative production messages):
