@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ROCE — Radiology Order Conversion Engine</title>
+  <meta name="description" content="ROCE (Radiology Order Conversion Engine) is a HIPAA-aware patient scheduling platform that helps imaging patients schedule, confirm, and complete their MRI, CT, ultrasound, and DEXA appointments via secure SMS." />
+  <style>
+    :root {
+      --ink: #0f1f33;
+      --muted: #4a5b72;
+      --accent: #1f5fa6;
+      --accent-dark: #143f74;
+      --bg: #f6f8fb;
+      --card: #ffffff;
+      --border: #d9e1ec;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+    header {
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+      color: #fff;
+      padding: 56px 24px 64px;
+    }
+    header .wrap {
+      max-width: 880px;
+      margin: 0 auto;
+    }
+    header h1 {
+      margin: 0 0 12px;
+      font-size: 2.1rem;
+      letter-spacing: -0.01em;
+    }
+    header p.tagline {
+      margin: 0;
+      font-size: 1.1rem;
+      opacity: 0.92;
+    }
+    nav.top {
+      max-width: 880px;
+      margin: -28px auto 0;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px 22px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      box-shadow: 0 6px 18px rgba(15, 31, 51, 0.05);
+    }
+    nav.top a {
+      color: var(--accent-dark);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.96rem;
+    }
+    nav.top a:hover { text-decoration: underline; }
+    main {
+      max-width: 880px;
+      margin: 32px auto 64px;
+      padding: 0 24px;
+    }
+    section.card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 24px 28px;
+      margin-bottom: 22px;
+    }
+    h2 {
+      margin: 4px 0 12px;
+      font-size: 1.3rem;
+      color: var(--accent-dark);
+    }
+    h3 {
+      margin: 18px 0 8px;
+      font-size: 1.05rem;
+      color: var(--ink);
+    }
+    p { margin: 0 0 12px; color: var(--muted); }
+    ul { color: var(--muted); }
+    .pill {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #fff;
+      background: var(--accent);
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+    }
+    footer {
+      max-width: 880px;
+      margin: 0 auto 48px;
+      padding: 0 24px;
+      color: var(--muted);
+      font-size: 0.88rem;
+      text-align: center;
+    }
+    footer a { color: var(--accent-dark); }
+    code.inline {
+      background: #eef2f8;
+      padding: 1px 6px;
+      border-radius: 4px;
+      font-size: 0.92em;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <h1>Radiology Order Conversion Engine (ROCE)</h1>
+      <p class="tagline">A HIPAA-aware patient scheduling platform for radiology imaging.</p>
+    </div>
+  </header>
+
+  <nav class="top" aria-label="Primary">
+    <a href="#about">About</a>
+    <a href="#program">SMS Program</a>
+    <a href="#consent">How Consent Works</a>
+    <a href="terms.html">Terms &amp; Conditions</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <main>
+    <section class="card" id="about">
+      <span class="pill">About</span>
+      <h2>What ROCE Does</h2>
+      <p>
+        The Radiology Order Conversion Engine (&ldquo;ROCE&rdquo;) is an internal
+        operations platform used by radiology practices to help patients schedule,
+        confirm, and complete imaging exams that have already been ordered by
+        their physicians &mdash; including MRI, CT, ultrasound, and DEXA studies.
+      </p>
+      <p>
+        ROCE is not a replacement for an electronic medical record (EMR), a
+        patient portal, or a marketing service. It is a focused tool that
+        converts pre-authorized imaging orders into completed appointments
+        through secure, low-PHI text messages, calendar invitations, and
+        clinician-supervised exception handling.
+      </p>
+    </section>
+
+    <section class="card" id="program">
+      <span class="pill">SMS Program</span>
+      <h2>The Patient Scheduling Text Program</h2>
+      <p>
+        Once a patient&rsquo;s imaging order has been entered (and any required
+        prior authorization has been approved), ROCE may send the patient one
+        or more text messages to help them schedule and confirm the exam.
+      </p>
+      <h3>Message Types</h3>
+      <ul>
+        <li>An initial scheduling invitation containing a secure, expiring link.</li>
+        <li>Reminder messages 72 hours, 24 hours, and 3 hours before the appointment.</li>
+        <li>A confirmation request the day before the exam.</li>
+        <li>Replies to keywords <strong>HELP</strong> and <strong>STOP</strong>.</li>
+      </ul>
+      <h3>Message Frequency</h3>
+      <p>
+        Patients typically receive between 1 and 6 messages per imaging order,
+        depending on how quickly they schedule and confirm.
+      </p>
+      <h3>Message and Data Rates</h3>
+      <p>
+        Message and data rates may apply, depending on the patient&rsquo;s mobile
+        plan. ROCE does not charge patients to participate.
+      </p>
+    </section>
+
+    <section class="card" id="consent">
+      <span class="pill">Consent</span>
+      <h2>How Patients Opt In</h2>
+      <p>
+        Patients only receive ROCE text messages after they have provided
+        consent to be contacted by the radiology practice for scheduling
+        purposes. Consent is collected through one or more of the following
+        mechanisms:
+      </p>
+      <ul>
+        <li>
+          <strong>At point of care</strong> &mdash; the patient provides a mobile
+          phone number during registration with the radiology practice or
+          referring office, and consents (in writing or verbally, recorded in
+          the chart) to receive scheduling-related text messages from the
+          practice.
+        </li>
+        <li>
+          <strong>At order entry</strong> &mdash; when an imaging order is placed,
+          practice staff verbally confirm the patient agrees to receive
+          scheduling text messages and document the consent in the patient&rsquo;s
+          medical record.
+        </li>
+        <li>
+          <strong>Web form / patient portal</strong> &mdash; the patient submits
+          their phone number through a practice web form or patient portal
+          page that includes an opt-in checkbox describing the SMS scheduling
+          program and a link to these Terms and the Privacy Policy.
+        </li>
+        <li>
+          <strong>Reply-keyword opt-in</strong> &mdash; the patient texts the
+          keyword <strong>START</strong> (or <strong>SCHEDULE</strong>,
+          <strong>BEGIN</strong>, or <strong>YES</strong>) to the program
+          number, after which an automated welcome message confirms enrollment.
+        </li>
+      </ul>
+      <p>
+        Patients can opt out at any time by replying <strong>STOP</strong>, and
+        can request help by replying <strong>HELP</strong>.
+      </p>
+    </section>
+
+    <section class="card" id="contact">
+      <span class="pill">Contact</span>
+      <h2>Support &amp; Questions</h2>
+      <p>
+        For questions about the SMS scheduling program, your messages, or your
+        privacy, please contact us:
+      </p>
+      <p>
+        Email: <a href="mailto:elliottbrown@gmail.com">elliottbrown@gmail.com</a>
+      </p>
+      <p>
+        Mailing address: available on request.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2026 Radiology Order Conversion Engine (ROCE). &nbsp;
+    <a href="terms.html">Terms &amp; Conditions</a> &nbsp;&middot;&nbsp;
+    <a href="privacy.html">Privacy Policy</a>
+  </footer>
+</body>
+</html>
