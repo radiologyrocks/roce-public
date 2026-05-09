@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Schedule Your Imaging Exam — Advanced Medical Imaging</title>
+  <meta name="description" content="Example patient scheduling page for Advanced Medical Imaging and the ROCE radiology scheduling SMS program." />
+  <style>
+    :root {
+      --ink: #0f1f33;
+      --muted: #53647b;
+      --accent: #1f5fa6;
+      --accent-dark: #143f74;
+      --ok: #0f7a5f;
+      --warn-bg: #fff7e6;
+      --warn-border: #f3d27a;
+      --bg: #f6f8fb;
+      --card: #ffffff;
+      --border: #d9e1ec;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid var(--border);
+      padding: 18px 20px;
+    }
+    header .wrap,
+    main,
+    footer {
+      max-width: 840px;
+      margin: 0 auto;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .brand strong {
+      color: var(--accent-dark);
+      font-size: 1rem;
+    }
+    .brand span {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    main {
+      padding: 28px 20px 44px;
+    }
+    .notice {
+      background: var(--warn-bg);
+      border: 1px solid var(--warn-border);
+      border-radius: 8px;
+      padding: 12px 14px;
+      color: #6c4a00;
+      font-size: 0.94rem;
+      margin-bottom: 18px;
+    }
+    .panel {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 24px;
+      margin-bottom: 18px;
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: 2rem;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+    }
+    h2 {
+      margin: 0 0 12px;
+      font-size: 1.15rem;
+      color: var(--accent-dark);
+    }
+    p {
+      margin: 0 0 12px;
+      color: var(--muted);
+    }
+    .summary {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+    .summary div {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px;
+      background: #fbfcfe;
+    }
+    .summary dt {
+      color: var(--muted);
+      font-size: 0.82rem;
+      margin-bottom: 2px;
+    }
+    .summary dd {
+      margin: 0;
+      color: var(--ink);
+      font-weight: 650;
+    }
+    .slots {
+      display: grid;
+      gap: 10px;
+      margin-top: 14px;
+    }
+    .slot {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+      width: 100%;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: #fff;
+      padding: 14px 16px;
+      color: var(--ink);
+      text-align: left;
+      font: inherit;
+    }
+    .slot strong {
+      display: block;
+      color: var(--ink);
+      font-size: 1rem;
+    }
+    .slot span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    .slot b {
+      color: var(--accent-dark);
+      white-space: nowrap;
+    }
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+    .button {
+      display: inline-block;
+      border: 1px solid var(--accent);
+      border-radius: 8px;
+      background: var(--accent);
+      color: #fff;
+      padding: 11px 16px;
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .button.secondary {
+      background: #fff;
+      color: var(--accent-dark);
+      border-color: var(--border);
+    }
+    .safe {
+      color: var(--ok);
+      font-weight: 700;
+    }
+    .fineprint {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    footer {
+      padding: 0 20px 36px;
+      color: var(--muted);
+      font-size: 0.88rem;
+      text-align: center;
+    }
+    footer a { color: var(--accent-dark); }
+    @media (max-width: 640px) {
+      .brand { align-items: flex-start; flex-direction: column; }
+      h1 { font-size: 1.55rem; }
+      .summary { grid-template-columns: 1fr; }
+      .slot { align-items: flex-start; flex-direction: column; }
+      .actions { flex-direction: column; }
+      .button { text-align: center; width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap brand">
+      <strong>Advanced Medical Imaging</strong>
+      <span>Secure scheduling example powered by ROCE</span>
+    </div>
+  </header>
+
+  <main>
+    <div class="notice">
+      Demo page for carrier review. This page uses synthetic example data and
+      does not schedule a real medical appointment.
+    </div>
+
+    <section class="panel">
+      <h1>Your imaging exam is ready to schedule</h1>
+      <p>
+        Hi Alex, your referring clinician's imaging order is ready for
+        scheduling. Choose an available appointment time below or request a
+        callback from the scheduling team.
+      </p>
+      <p class="fineprint">
+        For privacy, this text-message link does not show diagnosis details,
+        insurance details, medical record numbers, or clinical screening
+        questions.
+      </p>
+
+      <dl class="summary">
+        <div>
+          <dt>Patient</dt>
+          <dd>Alex Example</dd>
+        </div>
+        <div>
+          <dt>Exam type</dt>
+          <dd>Imaging exam</dd>
+        </div>
+        <div>
+          <dt>Location</dt>
+          <dd>Main Street Imaging</dd>
+        </div>
+        <div>
+          <dt>Status</dt>
+          <dd><span class="safe">Ready to schedule</span></dd>
+        </div>
+      </dl>
+    </section>
+
+    <section class="panel">
+      <h2>Available appointment times</h2>
+      <p>Selecting a time on the production service would reserve or request
+        that appointment with staff confirmation.</p>
+      <div class="slots" aria-label="Available appointment times">
+        <button class="slot" type="button">
+          <span><strong>Tuesday, May 12</strong><span>8:30 AM at Main Street Imaging</span></span>
+          <b>Select</b>
+        </button>
+        <button class="slot" type="button">
+          <span><strong>Wednesday, May 13</strong><span>1:15 PM at Main Street Imaging</span></span>
+          <b>Select</b>
+        </button>
+        <button class="slot" type="button">
+          <span><strong>Friday, May 15</strong><span>10:00 AM at Main Street Imaging</span></span>
+          <b>Select</b>
+        </button>
+      </div>
+      <div class="actions">
+        <a class="button" href="#callback">Request a callback</a>
+        <a class="button secondary" href="../../terms.html">Terms</a>
+        <a class="button secondary" href="../../privacy.html">Privacy</a>
+      </div>
+    </section>
+
+    <section class="panel" id="callback">
+      <h2>Need help?</h2>
+      <p>
+        Reply <strong>Q</strong> to the text message if you would like the
+        scheduling team to call you. Reply <strong>STOP</strong> to opt out of
+        SMS messages, or <strong>HELP</strong> for support information.
+      </p>
+      <p class="fineprint">
+        Message frequency varies, up to 6 messages per imaging order. Message
+        and data rates may apply. SMS consent is not a condition of receiving
+        medical care.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2026 Radiology Order Conversion Engine (ROCE). &nbsp;
+    <a href="../../index.html">SMS Program</a> &nbsp;&middot;&nbsp;
+    <a href="../../terms.html">Terms &amp; Conditions</a> &nbsp;&middot;&nbsp;
+    <a href="../../privacy.html">Privacy Policy</a>
+  </footer>
+</body>
+</html>

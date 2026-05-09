@@ -19,44 +19,53 @@ https://radiologyrocks.github.io/roce-public/privacy.html
 https://radiologyrocks.github.io/roce-public/terms.html
 ```
 
+## Example Scheduling URL
+
+Use this live URL as reviewer evidence in the Message Flow / CTA section:
+
+```
+https://radiologyrocks.github.io/roce-public/s/abc123/
+```
+
+## Patient Intake Opt-In URL
+
+Use this live URL as reviewer evidence for the opt-in checkbox:
+
+```
+https://radiologyrocks.github.io/roce-public/intake.html
+```
+
 ---
 
 ## How do end-users consent to receive messages?
 
-**(40–2048 characters; the version below is ~1,720 characters — well within the limit.)**
+**(40–2048 characters; the version below is focused on one verifiable opt-in path.)**
 
 ```
-Patients of participating radiology practices opt in to receive scheduling
-text messages from the Radiology Order Conversion Engine (ROCE) program
-through one or more of the following methods, all of which are operated by,
-or on behalf of, the patient's radiology practice:
+Patients opt in through the Advanced Medical Imaging patient intake form
+before any SMS messages are sent. The intake form asks the patient to provide
+or confirm their mobile phone number and includes an unchecked SMS consent
+checkbox with this language:
 
-1) Point of care: When the patient registers with the radiology practice,
-they provide a mobile phone number and either sign a written consent or
-give verbal consent (recorded in the patient's chart) to receive
-scheduling-related text messages from the practice.
+"I agree to receive appointment reminders via SMS. Msg & data rates may
+apply. Reply STOP to opt out."
 
-2) Order entry: When an imaging order is placed, practice staff verbally
-confirm that the patient agrees to receive scheduling SMS for that order
-and document the consent in the patient's medical record before any
-messages are sent.
+The same intake page also explains that messages may include imaging exam
+scheduling links, appointment reminders, confirmations, callback coordination,
+and HELP/STOP responses from Advanced Medical Imaging; message frequency
+varies, up to 6 messages per imaging order; and consent is not a condition of
+receiving medical care. The page links to the Terms and Privacy Policy.
 
-3) Web form / patient portal: The patient submits their phone number
-through a practice web form or patient-portal page that includes a
-clearly-labeled opt-in checkbox describing the SMS scheduling program,
-expected message types, message frequency, message-and-data-rates
-disclosure, and links to the program's Terms and Conditions and Privacy
-Policy at https://radiologyrocks.github.io/roce-public/.
+The public opt-in example is available here:
+https://radiologyrocks.github.io/roce-public/intake.html
 
-4) Reply-keyword opt-in: The patient texts an opt-in keyword (such as
-START, SCHEDULE, BEGIN, or YES) to the program number, after which an
-automated welcome message confirms enrollment and references the Terms
-and Privacy Policy.
+The public scheduling-link example is available here:
+https://radiologyrocks.github.io/roce-public/s/abc123/
 
-In all cases, consent is for transactional, scheduling-related messages
-only — never for marketing — and is not a condition of receiving medical
-care. Patients can opt out at any time by replying STOP, and can request
-help by replying HELP.
+Consent records are stored with patient ID, mobile phone number, consent
+timestamp, consent source, and Terms/Privacy version. Patients can opt out at
+any time by replying STOP and can request help by replying HELP. The program
+is transactional healthcare scheduling only and is not used for marketing.
 ```
 
 ---
@@ -85,7 +94,7 @@ within the 320 limit.)
 ROCE Radiology Scheduling: You're enrolled. We'll text you a secure link
 to schedule your imaging exam and reminders before your appointment.
 Msg & data rates may apply. Up to 6 msgs per order. Reply HELP for help,
-STOP to cancel. Terms: radiologyrocks.github.io/roce-public/terms.html
+STOP to cancel. Terms: advancedmedicalimaging.com/terms
 ```
 
 ---
@@ -123,7 +132,7 @@ INFO
 ```
 ROCE Radiology Scheduling: We send scheduling links and reminders for your
 imaging exam. Msg & data rates may apply. Reply STOP to cancel. Support:
-elliottbrown@gmail.com.  Terms: radiologyrocks.github.io/roce-public/terms.html
+elliottbrown@gmail.com. Terms: advancedmedicalimaging.com/terms
 ```
 
 **Sample messages** (Twilio asks you to paste 1–2 representative production messages):
@@ -131,9 +140,10 @@ elliottbrown@gmail.com.  Terms: radiologyrocks.github.io/roce-public/terms.html
 1. Initial scheduling invitation:
 
 ```
-Hi Alex, your imaging exam is ready to schedule. Tap here to pick a time:
-https://example.test/s/abc123. Reply Q if you'd like us to call you, or
-STOP to opt out.
+This message is from Advanced Medical Imaging. Hi Alex, your imaging exam is
+ready to schedule. Tap here to pick a time:
+https://advancedmedicalimaging.com/schedule/abc123 Reply Q if you'd like us
+to call you, HELP for help, or STOP to opt out.
 ```
 
 2. 24-hour reminder:
@@ -154,4 +164,6 @@ Before you click submit on the Twilio campaign form:
 - [ ] Privacy Policy URL above resolves with no auth wall.
 - [ ] Terms URL above resolves and shows **HELP** and **STOP** in bold.
 - [ ] Sample messages match what your application will actually send.
+- [ ] Sample messages use the production/practice domain, not a GitHub URL.
+- [ ] CTA evidence includes the live GitHub Pages opt-in and scheduling demo URLs.
 - [ ] Brand name on this form ("Radiology Order Conversion Engine") matches the brand you registered earlier in Twilio.

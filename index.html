@@ -127,6 +127,8 @@
     <a href="#about">About</a>
     <a href="#program">SMS Program</a>
     <a href="#consent">How Consent Works</a>
+    <a href="intake.html">Patient Intake Opt-In</a>
+    <a href="s/abc123/">Example Scheduling Link</a>
     <a href="terms.html">Terms &amp; Conditions</a>
     <a href="privacy.html">Privacy Policy</a>
     <a href="#contact">Contact</a>
@@ -184,39 +186,33 @@
       <p>
         Patients only receive ROCE text messages after they have provided
         consent to be contacted by the radiology practice for scheduling
-        purposes. Consent is collected through one or more of the following
-        mechanisms:
+        purposes. Consent is collected through a patient intake form before
+        SMS messages are sent:
       </p>
       <ul>
         <li>
-          <strong>At point of care</strong> &mdash; the patient provides a mobile
-          phone number during registration with the radiology practice or
-          referring office, and consents (in writing or verbally, recorded in
-          the chart) to receive scheduling-related text messages from the
-          practice.
+          The patient provides or confirms their mobile phone number and checks
+          an unchecked SMS consent box that says: <strong>I agree to receive
+          appointment reminders via SMS. Msg &amp; data rates may apply. Reply
+          STOP to opt out.</strong>
         </li>
-        <li>
-          <strong>At order entry</strong> &mdash; when an imaging order is placed,
-          practice staff verbally confirm the patient agrees to receive
-          scheduling text messages and document the consent in the patient&rsquo;s
-          medical record.
-        </li>
-        <li>
-          <strong>Web form / patient portal</strong> &mdash; the patient submits
-          their phone number through a practice web form or patient portal
-          page that includes an opt-in checkbox describing the SMS scheduling
-          program and a link to these Terms and the Privacy Policy.
-        </li>
-        <li>
-          <strong>Reply-keyword opt-in</strong> &mdash; the patient texts the
-          keyword <strong>START</strong> (or <strong>SCHEDULE</strong>,
-          <strong>BEGIN</strong>, or <strong>YES</strong>) to the program
-          number, after which an automated welcome message confirms enrollment.
-        </li>
+        <li>The intake form links to the Terms and Privacy Policy.</li>
+        <li>The intake form states that SMS consent is not a condition of receiving medical care.</li>
+        <li>Consent is stored with the patient ID, mobile phone number, timestamp, consent source, and Terms/Privacy version.</li>
       </ul>
       <p>
         Patients can opt out at any time by replying <strong>STOP</strong>, and
         can request help by replying <strong>HELP</strong>.
+      </p>
+      <p>
+        A public example of the SMS opt-in checkbox is available at
+        <a href="intake.html">https://radiologyrocks.github.io/roce-public/intake.html</a>.
+        Personal information and SMS consent will not be shared with third
+        parties or affiliates for marketing purposes.
+      </p>
+      <p>
+        A public, synthetic example of the patient-facing scheduling page is
+        available at <a href="s/abc123/">https://radiologyrocks.github.io/roce-public/s/abc123/</a>.
       </p>
     </section>
 
