@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SMS Consent Forms — Advanced Medical Imaging</title>
+  <meta name="description" content="Written consent, verbal consent, and staff documentation examples for the Advanced Medical Imaging SMS scheduling program." />
+  <style>
+    :root {
+      --ink: #0f1f33;
+      --muted: #53647b;
+      --accent: #1f5fa6;
+      --accent-dark: #143f74;
+      --bg: #f6f8fb;
+      --card: #ffffff;
+      --border: #d9e1ec;
+      --field: #eef3fb;
+      --note: #fff7e6;
+      --note-border: #f3d27a;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+    header {
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+      padding: 18px 20px;
+    }
+    header .wrap,
+    main,
+    footer {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .brand strong {
+      color: var(--accent-dark);
+      font-size: 1rem;
+    }
+    .brand span {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    main { padding: 28px 20px 48px; }
+    .panel {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 24px;
+      margin-bottom: 18px;
+    }
+    h1 {
+      margin: 0 0 8px;
+      color: var(--ink);
+      font-size: 1.85rem;
+      letter-spacing: -0.01em;
+    }
+    h2 {
+      margin: 0 0 12px;
+      color: var(--accent-dark);
+      font-size: 1.14rem;
+    }
+    h3 {
+      margin: 18px 0 8px;
+      color: var(--ink);
+      font-size: 1rem;
+    }
+    p, li { color: var(--muted); }
+    p { margin: 0 0 12px; }
+    ul { margin-top: 0; }
+    label {
+      display: block;
+      margin: 14px 0 6px;
+      color: var(--ink);
+      font-weight: 650;
+    }
+    input[type="text"],
+    input[type="tel"],
+    input[type="date"],
+    textarea {
+      width: 100%;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--field);
+      color: var(--ink);
+      font: inherit;
+      padding: 12px;
+    }
+    textarea {
+      min-height: 112px;
+      resize: vertical;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .consent-box {
+      display: grid;
+      grid-template-columns: 24px 1fr;
+      gap: 10px;
+      align-items: start;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px;
+      margin: 16px 0 12px;
+      background: #fbfcfe;
+    }
+    .consent-box input {
+      width: 20px;
+      height: 20px;
+      margin: 2px 0 0;
+    }
+    .consent-box label {
+      margin: 0;
+      font-weight: 700;
+    }
+    .script {
+      border-left: 4px solid var(--accent);
+      background: #fbfcfe;
+      padding: 14px 16px;
+      color: var(--ink);
+      margin: 10px 0 14px;
+    }
+    .note {
+      background: var(--note);
+      border: 1px solid var(--note-border);
+      border-radius: 8px;
+      padding: 14px;
+      color: #6c4a00;
+    }
+    .button {
+      display: inline-block;
+      border: 1px solid var(--accent);
+      border-radius: 8px;
+      background: var(--accent);
+      color: #fff;
+      padding: 11px 16px;
+      text-decoration: none;
+      font-weight: 700;
+    }
+    footer {
+      padding: 0 20px 36px;
+      color: var(--muted);
+      font-size: 0.88rem;
+      text-align: center;
+    }
+    footer a,
+    .panel a { color: var(--accent-dark); }
+    @media print {
+      body { background: #fff; }
+      header, footer, .no-print { display: none; }
+      main { padding: 0; }
+      .panel { page-break-inside: avoid; border-color: #999; }
+    }
+    @media (max-width: 680px) {
+      .brand { align-items: flex-start; flex-direction: column; }
+      .grid { grid-template-columns: 1fr; }
+      h1 { font-size: 1.45rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap brand">
+      <strong>Advanced Medical Imaging</strong>
+      <span>SMS consent evidence for carrier review</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="panel">
+      <h1>SMS Consent Forms and Staff Scripts</h1>
+      <p>
+        These examples document how patients consent to receive
+        scheduling-related SMS messages before Advanced Medical Imaging sends
+        appointment scheduling links, reminders, confirmations, or callback
+        coordination messages.
+      </p>
+      <p class="note">
+        Consent is for transactional healthcare scheduling only. Consent is
+        not a condition of receiving medical care. Personal information and SMS
+        consent will not be shared with third parties or affiliates for
+        marketing purposes.
+      </p>
+    </section>
+
+    <section class="panel" id="written-consent">
+      <h2>1) Point of Care Written Consent</h2>
+      <p>
+        The patient sees this consent language during in-person registration
+        on paper or on a tablet. The checkbox starts unchecked and the patient
+        signs or initials before SMS enrollment is recorded.
+      </p>
+      <form>
+        <div class="grid">
+          <div>
+            <label for="written-name">Patient name</label>
+            <input id="written-name" type="text" value="Alex Example" />
+          </div>
+          <div>
+            <label for="written-phone">Mobile phone</label>
+            <input id="written-phone" type="tel" value="(555) 010-0123" />
+          </div>
+        </div>
+        <div class="consent-box">
+          <input id="written-sms" type="checkbox" />
+          <label for="written-sms">I agree to receive scheduling-related text messages from Advanced Medical Imaging regarding my appointments. Message &amp; data rates may apply. Up to 4 messages per appointment. Reply STOP to opt out, HELP for help. See our <a href="terms.html">Terms</a> and <a href="privacy.html">Privacy Policy</a>. Consent is not a condition of receiving medical care.</label>
+        </div>
+        <div class="grid">
+          <div>
+            <label for="signature">Patient signature / initials</label>
+            <input id="signature" type="text" value="A.E." />
+          </div>
+          <div>
+            <label for="signature-date">Date</label>
+            <input id="signature-date" type="date" value="2026-05-09" />
+          </div>
+        </div>
+      </form>
+    </section>
+
+    <section class="panel" id="verbal-consent">
+      <h2>2) Verbal Consent Script</h2>
+      <p>
+        If consent is collected verbally, staff read the script below and
+        document the patient's response in the medical record before any SMS
+        messages are sent.
+      </p>
+      <div class="script">
+        "We can send you text messages to help schedule your radiology
+        appointment. Message &amp; data rates may apply. Up to 4 messages per
+        appointment. Reply STOP to opt out, HELP for help. SMS consent is not a
+        condition of receiving medical care. Do you agree to receive these
+        messages?"
+      </div>
+      <form>
+        <div class="grid">
+          <div>
+            <label for="verbal-response">Patient response</label>
+            <input id="verbal-response" type="text" value="Yes, patient agreed" />
+          </div>
+          <div>
+            <label for="verbal-date">Date documented</label>
+            <input id="verbal-date" type="date" value="2026-05-09" />
+          </div>
+        </div>
+        <label for="staff-note">Staff documentation note</label>
+        <textarea id="staff-note">Patient verbally consented to scheduling-related SMS from Advanced Medical Imaging. Consent includes scheduling links, reminders, confirmations, callback coordination, HELP/STOP responses, message and data rates disclosure, up to 4 messages per appointment, and STOP opt-out instructions.</textarea>
+      </form>
+    </section>
+
+    <section class="panel" id="order-entry">
+      <h2>3) Order Entry Staff Confirmation</h2>
+      <p>
+        When an imaging order is placed, staff confirm SMS consent using the
+        verbal script above and record consent status before ROCE sends the
+        first scheduling message.
+      </p>
+      <ul>
+        <li>Consent source: order-entry staff confirmation.</li>
+        <li>Stored fields: patient ID, mobile phone number, timestamp, staff user, consent source, and Terms/Privacy version.</li>
+        <li>Patients may opt out at any time by replying STOP and may request help by replying HELP.</li>
+      </ul>
+    </section>
+
+    <section class="panel" id="web-form">
+      <h2>4) Web Form / Patient Portal Opt-In</h2>
+      <p>
+        The public example web form uses the same disclosures and is available
+        for reviewer verification.
+      </p>
+      <p class="no-print">
+        <a class="button" href="intake.html">View Web / Portal Opt-In Example</a>
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2026 Radiology Order Conversion Engine (ROCE). &nbsp;
+    <a href="index.html">SMS Program</a> &nbsp;&middot;&nbsp;
+    <a href="intake.html">Web Opt-In Form</a> &nbsp;&middot;&nbsp;
+    <a href="terms.html">Terms &amp; Conditions</a> &nbsp;&middot;&nbsp;
+    <a href="privacy.html">Privacy Policy</a>
+  </footer>
+</body>
+</html>
